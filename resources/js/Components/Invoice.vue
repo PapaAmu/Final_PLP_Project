@@ -1,10 +1,16 @@
 <!-- resources/js/Components/MyComponent.vue -->
 <template>
     <div>
-      <h1>This is Real Invoicing system</h1>
+      <router-view/>
     </div>
   </template>
   
+
+
+
+
+
+
   <script>
   export default {
     name: 'Invoice',
