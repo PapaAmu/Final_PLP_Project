@@ -10,8 +10,6 @@ class InvoiceController extends Controller
     public function get_all_invoices()
     {
         $invoices = Invoice::all();
-        return response()->json([
-            'invoice' => $invoices
-        ], 200);
+        return response()->json(['invoices' => $invoices], 200); // Ensure 'invoices' key matches Vue
     }
 }
