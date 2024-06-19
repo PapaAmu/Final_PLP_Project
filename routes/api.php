@@ -5,3 +5,4 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InvoiceController;
 
 Route::get('/get_all_invoices', [InvoiceController::class, 'get_all_invoices']);
+Route::get('/search_invoice', [InvoiceController::class, 'search_invoice']);

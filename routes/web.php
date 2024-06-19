@@ -21,6 +21,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/api/get_all_invoices', [InvoiceController::class, 'get_all_invoices']);
 
+Route::get('/api/search_invoice', [InvoiceController::class, 'search_invoice']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
