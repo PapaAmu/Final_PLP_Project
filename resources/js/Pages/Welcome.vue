@@ -25,7 +25,7 @@ defineProps({
                 <header class="grid grid-cols-2 items-center gap-2 py-2 lg:grid-cols-3 bg-gray-900">
                     <div class="flex lg:justify-center lg:col-start">
                         <span>THEMBA REAL</span>
-                        <span>LUKHELE</span>
+                        <span> LUKHELE</span>
                     </div>
                     <nav v-if="canLogin" class="-mx-3 flex justify-end">
                         <Link

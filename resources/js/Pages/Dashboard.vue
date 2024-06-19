@@ -1,27 +1,14 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
-import Invoice from '@/Components/Invoice.vue';
-
-import { onMounted, ref } from 'vue';
-import axios from 'axios';
-
-let invoices = ref([])
-
-onMounted(async () => {
-    getInvoices()
-})
+import InvoiceTable from '../Components/Invoices/InvoiceTable.vue';
 
 
-const getInvoices = async () => {
-    let response = await axios.get("/api/get_all_invoices")
-    console.log('response', response)
-}
 
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Invoicing" />
 
     <AuthenticatedLayout class="py-1">
         <template #header>
@@ -37,10 +24,11 @@ const getInvoices = async () => {
             
         </div>
         
+       
                   
-        
+        <InvoiceTable />
                 
 
     </AuthenticatedLayout>
-    <Invoice />
+    
 </template>

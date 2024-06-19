@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InvoiceController;
 use Inertia\Inertia;
 
 Route::get('/', function () {
@@ -18,9 +19,8 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/{pathMatch}', function(){
-    return view('welcome');
-})->where('pathMatch',".*");
+Route::get('/api/get_all_invoices', [InvoiceController::class, 'get_all_invoices']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
