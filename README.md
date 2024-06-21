@@ -35,8 +35,8 @@ An Invoice System built using Laravel and Vue.js, with MariaDB & MySQL for datab
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/invoice-system.git
-    cd invoice-system
+    https://github.com/PapaAmu/Final_PLP_Project.git
+    cd Final_PLP_Project
     ```
 
 2. **Install dependencies:**
@@ -126,4 +126,6 @@ We welcome contributions! Please follow these steps:
 
 ## Contact
 
-For questions or support, please contact [realtee.lukhele@gmail.com](mailto:realtee.lukhele@gmail.com).
+For questions or support, please contact [realtee.lukhele@gmail.com](mailto:realtee.lukhele@gmail.com). 
+Please note this project may have some slight issues due to some missing code blocks, I was runnng out of time for submission. 
+However, you can contact me directly to address any challenges. WhatsApp : +276403 8888 3
