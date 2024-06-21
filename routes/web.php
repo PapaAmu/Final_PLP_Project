@@ -19,9 +19,18 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+Route::get('/NewInvoices', function () {
+    return Inertia::render('NewInvoices', [
+        'title' => 'New Invoices',
+    ]);
+})->middleware(['auth', 'verified'])->name('NewInvoices');
+
 Route::get('/api/get_all_invoices', [InvoiceController::class, 'get_all_invoices']);
 
 Route::get('/api/search_invoice', [InvoiceController::class, 'search_invoice']);
+
+Route::post('/create_invoice', [InvoiceController::class, 'create_invoice']);
 
 
 Route::middleware('auth')->group(function () {

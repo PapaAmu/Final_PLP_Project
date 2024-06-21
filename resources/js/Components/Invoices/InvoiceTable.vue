@@ -1,10 +1,11 @@
 <script setup>
 import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
 import axios from 'axios';
 
 const invoices = ref([]);
-
 const searchInvoice = ref([]);
+const router = useRouter();
 
 const getInvoices = async () => {
     try {
@@ -21,11 +22,21 @@ onMounted(() => {
 });
 
 const search = async () => {
-    let response = await axios.get('/api/search_invoice?s='+searchInvoice.value);
+    let response = await axios.get('/api/search_invoice?s=' + searchInvoice.value);
     console.log('response', response.data.invoices);
     invoices.value = response.data.invoices;
 };
 
+const navigateToNewInvoice = () => {
+    console.log('Navigating to NewInvoices');
+    router.push({ name: 'NewInvoices' })
+        .then(() => {
+            console.log('Navigation successful');
+        })
+        .catch((err) => {
+            console.error('Navigation error:', err);
+        });
+};
 </script>
 
 <template>
@@ -36,7 +47,7 @@ const search = async () => {
                     <h2 class="invoice__title">Invoices</h2>
                 </div>
                 <div>
-                    <a class="btn btn-secondary">
+                    <a class="btn btn-secondary" @click="navigateToNewInvoice">
                         New Invoice
                     </a>
                 </div>
@@ -72,7 +83,7 @@ const search = async () => {
                     <div class="relative">
                         <i class="table--search--input--icon fas fa-search"></i>
                         <input class="table--search--input" type="text" placeholder="Search invoice"
-                        v-model="searchInvoice" @keyup="search()">
+                        v-model="searchInvoice" @keyup="search">
                     </div>
                 </div>
 
@@ -106,7 +117,3 @@ const search = async () => {
         </div>
     </div>
 </template>
-
-<style scoped>
-/* Add any necessary styles */
-</style>
